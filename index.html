@@ -1,0 +1,384 @@
+    <!DOCTYPE html>
+    <html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pirngadi Daycare</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+        <style>
+            /* Global Styles */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: 'Roboto', sans-serif;
+                line-height: 1.6;
+                color: #333;
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+
+            ul {
+                list-style: none;
+            }
+
+                /* Navbar */
+                .navbar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 2px 20px;
+                background-color: #398dfa;
+                color: white;
+                position: sticky;
+                top: 0;
+                z-index: 1000;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .navbar .logo img {
+                height: 50px;
+            }
+
+            .navbar ul {
+                display: flex;
+                gap: 15px;
+            }
+
+            .navbar li {
+                font-size: 16px;
+            }
+
+            .navbar li a:hover {
+                color: #2d4cff;
+            }
+
+            /* Hamburger Menu */
+            .hamburger {
+                display: none;
+                flex-direction: column;
+                cursor: pointer;
+            }
+
+            .hamburger div {
+                width: 25px;
+                height: 3px;
+                background: white;
+                margin: 3px 0;
+            }
+
+            .navbar ul {
+                display: flex;
+            }
+
+            .navbar ul.active {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: #398dfa;
+                padding: 10px;
+            }
+
+            /* Responsive Styles */
+            @media (max-width: 768px) {
+                .hamburger {
+                    display: flex;
+                }
+
+                .navbar ul {
+                    display: none;
+                }
+
+                .navbar ul.active {
+                    display: flex;
+                }
+
+                .navbar li {
+                    text-align: center;
+                }
+            }
+
+            /* Hero Section */
+            .hero {
+                background: url('pirngadi.png') no-repeat center center/cover;
+                height: calc(100vh - 60px);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                color: white;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+                margin-bottom: 10px;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+                margin-bottom: 20px;
+            }
+
+            .hero button {
+                padding: 10px 20px;
+                font-size: 16px;
+                color: #398dfa;
+                background: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            .hero button:hover {
+                background: #ff6f61;
+                color: white;
+            }
+
+            /* Section Styles */
+            section {
+                padding: 50px 20px;
+                text-align: center;
+            }
+
+            section h2 {
+                font-size: 2.5rem;
+                margin-bottom: 20px;
+                color: #398dfa;
+            }
+
+            section p {
+                font-size: 1.2rem;
+                color: #454545;
+            }
+
+            /* Curriculum Section */
+            .curriculum .curriculum-details {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 20px;
+            }
+
+            .curriculum .detail {
+                background: white;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            /* School Info Section */
+            .school-info ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            .school-info li {
+                font-size: 1rem;
+                margin: 5px 0;
+                padding: 5px;
+                border-bottom: 1px solid #ddd;
+            }
+
+            /* Location Section */
+            .location .map-container {
+                margin: 20px auto;
+                max-width: 800px;
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            /* Footer */
+            .footer {
+                background: #398dfa;
+                color: white;
+                text-align: center;
+                padding: 20px;
+            }
+
+            .footer a {
+                color: #398dfa;
+            }
+
+            .isi-konten{
+                color: white;
+            }
+            
+    /* Services Section */
+    .services {
+                padding: 50px 20px;
+                text-align: center;
+                background: #f9f9f9;
+            }
+
+            .services h2 {
+                font-size: 2.5rem;
+                margin-bottom: 20px;
+            }
+
+            .services .cards {
+                display: flex;
+                gap: 20px;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .services .card {
+                background: white;
+                padding: 20px;
+                border: 1px solid #ddd;
+                border-radius: 10px;
+                width: 300px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .services .card img {
+                width: 100%;
+                border-radius: 10px;
+            }
+
+            .services .card h3 {
+                margin: 15px 0;
+                font-size: 1.5rem;
+            }
+
+            .services .card p {
+                font-size: 1rem;
+                color: #555;
+            }
+        </style>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const hamburger = document.querySelector('.hamburger');
+                const navMenu = document.querySelector('.navbar ul');
+
+                hamburger.addEventListener('click', () => {
+                    navMenu.classList.toggle('active');
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <!-- Navbar -->
+        <header class="navbar">
+            <div class="logo">
+                <img src="logo.png" alt="Pirngadi Daycare Logo">
+            </div>
+            <nav>
+                <div class="hamburger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <ul>
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#curriculum">Kurikulum</a></li>
+                    <li><a href="#school-info">Tentang</a></li>
+                    <li><a href="#location">Lokasi</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <h1>Welcome to Pirngadi Daycare</h1>
+            <p class="isi-konten">your child’s future begins!</p>
+            <button>Learn More</button>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services" id="services">
+            <h2>Our Services</h2>
+            <div class="cards">
+                <div class="card">
+                    <img src="study.jpg" alt="Study Time">
+                    <h3>Educational Activities</h3>
+                    <p>Helping your child learn and grow with fun and interactive activities.</p>
+                </div>
+                <div class="card">
+                    <img src="playing2.jpg" alt="Play Time">
+                    <h3>Play & Creativity</h3>
+                    <p>Encouraging creativity and social development through play.</p>
+                </div>
+                <div class="card">
+                    <img src="image3.jpg" alt="Healthy Food">
+                    <h3>Healthy Meals</h3>
+                    <p>Providing nutritious and delicious meals every day.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Curriculum Section -->
+        <section class="services" id="services">
+            <h2>Kurikulum Montessori</h2>
+            <p class=kurikulum>kami berfokus pada pengembangan kemandirian, kreativitas, dan cinta belajar di lingkungan yang mendukung</p>
+            <div class="cards">
+                <div class="card">
+                    <img src="kancing baju.jpg" alt="Study Time">
+                    <h3>Kehidupan Praktis</h3>
+                    <p>Kegiatan yang meningkatkan keterampilan motorik halus dan kemandirian.</p>
+                </div>
+                <div class="card">
+                    <img src="sensorik.jpg" alt="Play Time">
+                    <h3>Pengembangan Sensorik</h3>
+                    <p>Materi sensorik yang menarik untuk mengasah keterampilan kognitif.</p>
+                </div>
+                <div class="card">
+                    <img src="alphabet.jpeg" alt="Healthy Food">
+                    <h3>Bahasa & Matematika</h3>
+                    <p>Alat interaktif untuk literasi awal dan pemahaman angka.</p>
+                </div>
+            </div>
+        </section>
+        
+    <!-- About Section -->
+    <section id="about">
+        <h2>Tentang Kami</h2>
+        <p>Daycare YBPPK Pirngadi telah menjadi rumah kedua bagi anak-anak usia 0-9 tahun dengan menyediakan layanan penitipan anak yang berkualitas dan penuh perhatian. Kami memahami betapa pentingnya masa-masa awal perkembangan anak, sehingga kami fokus pada menciptakan lingkungan yang aman, hangat, dan mendukung bagi setiap anak untuk belajar dan bermain.</p>
+        <p>Dengan tim pengasuh yang profesional dan berpengalaman, kami selalu berupaya membangun kepercayaan diri, rasa ingin tahu, dan kreativitas anak-anak. Kami tidak hanya mengasuh, tetapi juga membantu anak-anak menemukan dunia mereka melalui pengalaman yang bermakna.</p>
+    </section>
+
+        <!-- School Info Section -->
+        <section class="school-info" id="school-info">
+            <h2>Tentang Pirngadi Daycare</h2>
+            <p>Memberikan pendidikan inovatif di lingkungan yang mendukung.</p>
+            <ul>
+                <li>AGE : 0 - 9 Tahun</li>
+                <li>Class size : 15 Anak</li>
+                <li>Daycare Service : BEBAS TENTUKAN BIAYA SESUAI PILIHAN LAYANANMU!</li>
+                <li>Layanan: Senin - Jum'at, 07.00 - 18.00 WIB
+                             Sabtu - Minggu, 07.00 - 18.00 WIB</li>
+            </ul>
+        </section>
+
+        <section class="location" id="location">
+            <h2>Lokasi Kami</h2>
+            <p><strong>Alamat:</strong> Pirngadi 4-6, Kel. Bubutan, Kec. Bubutan, 60174</p>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31569.27032425393!2d112.7310632!3d-7.2522882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7f94157d2ae55%3A0x5ca5c47e48d61d37!2sPirngadi%204-6%2C%20Bubutan%2C%20Surabaya%2C%20Jawa%20Timur%2C%20Indonesia!5e0!3m2!1sen!2sid!4v1234567890!5m2!1sen!2sid" 
+                    width="100%" 
+                    height="300" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2025 Pirngadi Daycare</p>
+        </footer>
+    </body>
+    </html>
