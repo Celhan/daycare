@@ -89,8 +89,8 @@
                 padding: 10px;
             }
 
-            /* Responsive Styles */
-            @media (max-width: 768px) {
+                     /* Responsive Styles */
+                     @media (max-width: 768px) {
                 .hamburger {
                     display: flex;
                 }
@@ -110,7 +110,7 @@
 
             /* Hero Section */
             .hero {
-                background: url('pirngadi.png') no-repeat center center/cover;
+                background: url('alamak1.jpg') no-repeat center center/cover;
                 height: calc(100vh - 60px);
                 display: flex;
                 flex-direction: column;
@@ -200,19 +200,62 @@
 
             /* Footer */
             .footer {
-                background: #398dfa;
-                color: white;
-                text-align: center;
-                padding: 20px;
-            }
+    background: #398dfa; /* Warna latar belakang */
+    color: white; /* Warna teks */
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
 
-            .footer a {
-                color: #398dfa;
-            }
+.footer-content {
+    display: flex; /* Tata letak fleksibel untuk bagian footer */
+    justify-content: space-between;
+    flex-wrap: wrap; /* Untuk responsif */
+    gap: 20px; /* Jarak antar kolom */
+    margin-bottom: 10px;
+}
 
-            .isi-konten{
-                color: white;
-            }
+.footer-info,
+.footer-contact,
+.footer-social {
+    flex: 1; /* Bagian ini fleksibel, menyesuaikan ruang */
+    min-width: 200px; /* Ukuran minimum kolom */
+}
+
+.footer-info h3,
+.footer-contact h4,
+.footer-social h4 {
+    margin-bottom: 10px; /* Jarak bawah untuk judul */
+}
+
+.footer-contact ul,
+.footer-social ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-contact li,
+.footer-social li {
+    margin: 5px 0;
+}
+
+.footer-social a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: #ffcc00; /* Warna hover */
+}
+
+.footer-bottom {
+    text-align: center; /* Teks rata tengah */
+    border-top: 1px solid rgba(255, 255, 255, 0.3); /* Garis pemisah */
+    padding-top: 10px;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
             
     /* Services Section */
     .services {
@@ -306,6 +349,63 @@
             .navbar .logo img:hover {
               transform: scale(1.1); /* Efek zoom saat di-hover */
              }
+             .isi-konten{
+                color:white;
+
+             }
+             .content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.school-info {
+    border: 2px solid #ddd; /* Tambahkan border */
+    border-radius: 8px;
+    padding: 20px;
+    margin: 15px;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.school-info .text-content {
+    text-align: left;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.school-info ul li {
+    position: relative;
+    padding-left: 0;
+}
+
+.school-info ul li::before {
+    content: "🔹";
+    position: relative;
+    left: 1;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: #398dfa;
+}
+
+.text-content li {
+    margin: 20px 0;
+}
+
+.school-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.open {
+    height: auto;
+    width: 300px;
+    max-width: 600px;
+}
         </style>
         <script>
             document.addEventListener('DOMContentLoaded', () => {
@@ -398,9 +498,15 @@
         <p>Dengan tim pengasuh yang profesional dan berpengalaman, kami selalu berupaya membangun kepercayaan diri, rasa ingin tahu, dan kreativitas anak-anak. Kami tidak hanya mengasuh, tetapi juga membantu anak-anak menemukan dunia mereka melalui pengalaman yang bermakna.</p>
     </section>
 
+        
         <!-- School Info Section -->
         <section class="school-info" id="school-info">
             <h2>Tentang Pirngadi Daycare</h2>
+            <div class="content">
+            <div class="img-content">
+                <img src="opening.png" class="open">
+                </div>
+            <div class="text-content">
             <p>Memberikan pendidikan inovatif di lingkungan yang mendukung.</p>
             <ul>
                 <li>AGE : 0 - 9 Tahun</li>
@@ -409,6 +515,8 @@
                 <li>Layanan: Senin - Jum'at, 07.00 - 18.00 WIB
                              Sabtu - Minggu, 07.00 - 18.00 WIB</li>
             </ul>
+            </div>
+        </div>
         </section>
 
         <section class="location" id="location">
@@ -426,9 +534,32 @@
             </div>
         </section>
         
-        <!-- Footer -->
-        <footer class="footer">
-            <p>&copy; 2025 Pirngadi Daycare</p>
-        </footer>
+      <!-- Footer -->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-info">
+            <h3 style="color:beige">Pirngadi Daycare</h3>
+            <p>🎓Memberikan pendidikan dan layanan terbaik untuk buah hati Anda.</p>
+        </div>
+        <div class="footer-contact">
+            <h4>Kontak Kami</h4>
+            <ul>
+                <li>📍 Jl. Contoh No.123, Kota Medan</li>
+                <li>📞 0812-3456-7890</li>
+                <li>📧 sekretariat@pirngadi.sch.id</li>
+            </ul>
+        </div>
+        <div class="footer-social">
+            <h4>Ikuti Kami</h4>
+            <ul>
+                <li><a href="https://pirngadi.sch.id/" target="_blank">🌐 Website</a></li>
+                <li><a href="https://pirngadi.sch.id/" target="_blank">📘 Facebook</a></li>
+                <li><a href="https://pirngadi.sch.id/" target="_blank">📸 Instagram</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+    </body>
+    </html>
     </body>
     </html>
