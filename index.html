@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+        <!DOCTYPE html>
     <html lang="id">
     <head>
         <meta charset="UTF-8">
@@ -405,6 +405,23 @@
     height: auto;
     width: 300px;
     max-width: 600px;
+}
+            @media (max-width: 768px) {
+    .content {
+        flex-direction: column; /* Ubah arah flex menjadi kolom untuk layar kecil */
+        align-items: center; /* Pusatkan elemen dalam flex container */
+        text-align: center; /* Teks rata tengah */
+    }
+
+    .content .text-content {
+        margin-top: 20px; /* Tambahkan jarak antara teks dan gambar */
+    }
+
+    .open {
+        width: 100%; /* Sesuaikan lebar gambar agar tidak melebihi kontainer */
+        max-width: 300px; /* Tetapkan ukuran maksimum untuk gambar */
+        height: auto; /* Pertahankan rasio gambar */
+    }
 }
         </style>
         <script>
